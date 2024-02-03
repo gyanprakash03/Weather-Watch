@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeatherWatch</title>
+    <link rel="icon" href="./assets/weatherApp favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    
+    <div class="wrapper">
+
+        <!-- background video -->
+        <video autoplay muted loop id="video-background">
+            <source src="./assets/particles_-_323 (Original).mp4" type="video/mp4">
+        </video>
+
+        <!-- error msg if user location is not accessible -->
+        <div class="error-msg-container" error-msg-container>
+            <div class="error-msg">
+                Geolocation not Supported!
+            </div>
+            <p error-msg-close-btn>x</p>
+        </div>
+
+        <!-- heading -->
+        <h1>Weather Watch</h1>
+
+        <div class="tab-container">
+            <p class="tab" data-userWeather>Your Weather</p>
+            <p class="tab" data-searchWeather>Search Weather</p>
+        </div>
+
+        <div class="weather-container">
+
+            <!-- grant location screen container-->
+            <div class="sub-container grant-location-container">
+                <img src="./assets/location.png" width="80" height="80" loading="lazy">
+                <p>Grant Location Access</p>
+                <p>Allow Access to get weather Information</p>
+                <button class="btn" data-grantAccess>Grant Access</button>
+            </div>
+
+            <!-- search form-container-->
+            <form class="form-container" data-searchForm>
+                <input placeholder="Search for City..." data-searchInput id="searchInput" autocomplete="off">
+
+                <button class="btn" type="submit">
+
+                    <?xml version="1.0" encoding="utf-8"?>
+                    <svg width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M17.0392 15.6244C18.2714 14.084 19.0082 12.1301 19.0082 10.0041C19.0082 5.03127 14.9769 1 10.0041 1C5.03127 1 1 5.03127 1 10.0041C1 14.9769 5.03127 19.0082 10.0041 19.0082C12.1301 19.0082 14.084 18.2714 15.6244 17.0392L21.2921 22.707C21.6828 23.0977 22.3163 23.0977 22.707 22.707C23.0977 22.3163 23.0977 21.6828 22.707 21.2921L17.0392 15.6244ZM10.0041 17.0173C6.1308 17.0173 2.99087 13.8774 2.99087 10.0041C2.99087 6.1308 6.1308 2.99087 10.0041 2.99087C13.8774 2.99087 17.0173 6.1308 17.0173 10.0041C17.0173 13.8774 13.8774 17.0173 10.0041 17.0173Z"/>
+                    </svg>
+                </button>
+
+                <!-- button for smaller screens -->
+                <button class="btn" type="submit" submit-btn-2>Search</button>
+                <!-- clear input field button -->
+                <button clear-btn>X</button>
+            </form>
+
+            <!--- loading screen container -->
+            <div class="sub-container loading-container">
+                <img src="./assets/loading.gif" width="150" height="150">
+                <p>Loading</p>
+            </div>
+
+            <!-- location not found gif -->
+            <img class="error-gif" src="./assets/1920x1080-404.gif" alt="ERROR : NOT FOUND">
+
+            <!-- show weather info -->
+            <div class="sub-container user-info-container">
+
+                <!--city name and Flag-->
+                <div class="name">
+                    <p data-cityName></p>
+                    <img data-countryIcon>
+                </div>
+
+                <!-- weather description-->
+                <p data-weatherDesc></p>
+                <!--weather Icon-->
+                <img data-weatherIcon>
+                <!--temperature-->
+                <p data-temp></p>
+                <!-- maximun and minimum temperature -->
+                <div min-and-max>
+                    <p min-temp></p>
+                    <p max-temp></p>
+                </div>
+
+                <!-- button to change unit -->
+                <button class="btn" change-unit></button>
+
+                <!-- 3 parameter cards-->
+                <div class="parameter-container">
+
+                    <!--card 1-->
+                    <div class="parameter">
+                        <img src="./assets/wind.png" >
+                        <p>windspeed</p>
+                        <p data-windspeed></p>
+                    </div>
+
+                    <!--card 2-->
+                    <div class="parameter">
+                        <img src="./assets/humidity.png" >
+                        <p>humidity</p>
+                        <p data-humidity></p>
+                    </div>
+
+                    <!--card 3-->
+                    <div class="parameter">
+                        <img src="./assets/cloud.png" >
+                        <p>Clouds</p>
+                        <p data-cloudiness></p>
+                    </div>
+
+                </div>
+
+                <!-- heading for forecast section -->
+                <div fore-header-container>
+                    <hr>
+                    <div forecast-header>Weather forecast for next 5 days</div>
+                    <hr>
+                </div>
+
+                <!-- 5 forcast cards -->
+                <div class="forecast-container">
+
+                    <div forecast-card>
+                        <p forecast-date f-dd-1></p>
+                        <p forecast-temp f-t-1></p>
+                        <img forecast-icon f-i-1>
+                        <p forecast-desc f-d-1></p>
+                    </div>
+
+                    <div forecast-card>
+                        <p forecast-date f-dd-2></p>
+                        <p forecast-temp f-t-2></p>
+                        <img forecast-icon f-i-2>
+                        <p forecast-desc f-d-2></p>
+                    </div>
+
+                    <div forecast-card>
+                        <p forecast-date f-dd-3></p>
+                        <p forecast-temp f-t-3></p>
+                        <img forecast-icon f-i-3>
+                        <p forecast-desc f-d-3></p>
+                    </div>
+
+                    <div forecast-card>
+                        <p forecast-date f-dd-4></p>
+                        <p forecast-temp f-t-4></p>
+                        <img forecast-icon f-i-4>
+                        <p forecast-desc f-d-4></p>
+                    </div>
+
+                    <div forecast-card>
+                        <p forecast-date f-dd-5></p>
+                        <p forecast-temp f-t-5></p>
+                        <img forecast-icon f-i-5>
+                        <p forecast-desc f-d-5></p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>    
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

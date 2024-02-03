@@ -1,0 +1,495 @@
+/* universal selector for universally true attributes */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Merriweather Sans', sans-serif;
+    overflow-x: hidden;
+    color: rgb(255, 255, 0);
+    scroll-behavior: smooth;
+}
+
+/* main parent element */
+.wrapper{
+    width:100vw;
+    height:100vh;
+    padding-top: 1.4rem;
+    position: relative;
+}
+
+/* background video */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* error msg container for unavailable geolocation */
+.error-msg-container {
+    position: sticky;
+    top: 0px;
+    background-color: #c00000;
+    margin: 0px auto;
+    padding: 5px 15px;
+    border-radius: 3px;
+    width: 400px;
+    display: none;
+}
+
+.error-msg-container.active {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* error msg for unavailable geolocation */
+.error-msg {
+    color: black;
+    text-align: center;
+}
+
+/* butoon to hide error msg */
+p[error-msg-close-btn] {
+    color: #000000;
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* page title */
+h1 {
+    text-align: center;
+    text-transform:uppercase;
+    padding-top: 20px;
+}
+
+/* tabs - usertab and searchtab */
+.tab-container {
+    width:90%;
+    max-width: 550px;
+    margin: 0 auto;
+    margin-top: 4rem;
+    display: flex;
+    justify-content: space-between;
+    overflow: visible;
+    gap: 15px;
+}
+
+.tab{
+    cursor: pointer;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 1.75px;
+    padding: 5px 8px;
+    border: 1px solid yellow;
+    border-radius: 4px;
+    transition: 0.4s;
+    text-align: center;
+}
+
+.tab.current-tab{
+    background-color: yellow;
+    color: black;
+}
+
+/* container for all weather data */
+.weather-container{
+    margin-block:4rem;
+}
+
+/* basic attributes for all buttons */
+.btn {
+    all: unset;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 255, 0);
+    cursor: pointer;
+    padding: 10px 30px;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: yellow;
+    color: black;
+}
+
+button[change-unit] {
+    padding: 7px 19px;
+}
+
+/* basic attributes for sub containers */
+.sub-container{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+}
+
+/* grant location access screen attributes */
+.grant-location-container{
+    display:none; 
+}
+
+.grant-location-container.active{
+    display:flex;
+}
+
+.grant-location-container img{
+    margin-bottom: 2rem;
+}
+
+.grant-location-container p:first-of-type{
+    color: white;
+    font-size: 1.75rem;
+    font-weight: 600; 
+}
+
+.grant-location-container p:last-of-type{
+    font-size:0.85rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.75rem;
+    letter-spacing: 0.75px;
+}
+
+/* loading screen attributes */
+.loading-container{
+    display: none;
+}
+
+.loading-container.active{
+    display: flex;
+}
+
+.loading-container p{
+    text-transform: uppercase;
+}
+
+/* attributes for weather data container */
+.user-info-container{
+    display:none;
+    width: 90%;
+    max-width: 650px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+.user-info-container.active{
+    display: flex;
+}
+
+/* name of place */
+.name{
+    display: flex;
+    align-items: center;
+    gap: 0 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.user-info-container p{
+    font-size:1.5rem;
+    font-weight:200;
+}
+
+.user-info-container img{
+    width:90px;
+    height:90px;
+}
+
+.name p{
+    font-size:2rem;
+    font-weight: 400;
+    color: white;
+}
+
+.name img{
+    width: 30px;
+    height:30px;
+    object-fit: contain;
+}
+
+/* temperature values */
+.user-info-container p[data-temp] {
+    font-size:2.75rem;
+    font-weight:700;
+}
+
+.user-info-container div[min-and-max] {
+    display: flex;
+    gap: 3.5rem;
+    margin-block: 1rem;    
+}
+
+.user-info-container p[min-temp], p[max-temp] {
+    font-size: 1.05rem;
+    font-weight: 500;
+}
+
+/* attributes for 3 parameters */
+.parameter-container{
+    position: relative;
+    width: 90%;
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    overflow: visible;
+}
+
+.parameter{
+    position: relative;
+    width: 30%;
+    max-width:200px;
+    background-color: rgba(255, 255, 255, 0.16);
+    border-radius: 5px;
+    padding:1rem;
+    display: flex;
+    flex-direction: column;
+    gap:5px 0;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.parameter:hover {
+    transform: scale(1.05);
+}
+
+.parameter img{
+    width:50px;
+    height:50px;
+}
+
+.parameter p:first-of-type{
+    font-size: 1.15rem;
+    font-weight:600;
+    text-transform: uppercase;
+}
+
+.parameter p:last-of-type{
+    font-size: 1rem;
+    font-weight: 200;
+}
+
+/* search form attributes */
+.form-container{
+    display: none;
+    width:90%;
+    max-width:550px;
+    margin:0 auto;
+    justify-content: center;
+    align-items: center;
+    gap: 0 10px; 
+    margin-bottom: 3rem;
+    overflow: visible;
+}
+
+.form-container.active{
+    display: flex;
+}
+
+.form-container input{
+    all:unset;
+    width: calc(100% - 80px);
+    height:40px;
+    padding: 0 20px;
+    background-color: rgb(0, 0, 0);
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+}
+
+.form-container input::placeholder{
+    color: rgba(255, 255, 255, 0.514);
+}
+
+.form-container input:focus{
+    border: 3px solid rgba(255, 255, 255, 0.7);
+}
+
+.form-container .btn:first-of-type {
+    padding:unset;
+    width: 45px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom:1px;
+}
+
+.form-container .btn:first-of-type:hover svg {
+    fill: black;
+}
+
+.form-container svg {
+    fill: yellow;
+    transition: 0.3s;
+}
+
+button[submit-btn-2] {
+    display: none;
+}
+
+/* clear button for input field */
+button[clear-btn] {
+    all: unset;
+    position: relative;
+    color: rgba(255, 255, 255, 0.514);
+    right: 6rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 50%;
+    padding: 4px 9px;
+    transition: 0.3s;
+    opacity: 0;
+}
+
+button[clear-btn]:hover {
+    background-color: rgba(255, 255, 255, 0.374);
+    color: black;
+}
+
+/* attributes for forecast section */
+div[forecast-header] {
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.forecast-container {
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: space-between;
+    margin-top: 2rem;
+    overflow: visible;
+    margin-bottom: 1rem;
+}
+
+div[forecast-card] {
+    background-color: rgba(255, 255, 255, 0.158);
+    width: 20%;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding-block: 1rem;
+    transition: 0.3s;
+}
+
+div[forecast-card]:hover {
+    transform: scale(1.05);
+}
+
+p[forecast-date] {
+    font-size: 0.9rem;
+    color: white;
+    margin-bottom: 0.4rem;
+}
+
+p[forecast-temp] {
+    font-size: 1.25rem;
+    font-weight: 400;
+}
+
+p[forecast-desc] {
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+div[fore-header-container] {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-top: 2rem;
+}
+
+hr {
+    display: inline;
+    width: 20%;
+    height: 1px;
+}
+
+/* scrollbar attributes */
+::-webkit-scrollbar
+{
+	width: 6px;
+	background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb
+{
+	background-color: #ffff0097;
+    border-radius: 10px;
+}
+
+/* error gif for invalid location */
+.error-gif {
+    margin-inline: auto;
+    width: 250px;
+    display: none;
+}
+
+.error-gif.active {
+    display: block;
+}
+
+/************ For screen of size thinner than 600px *************/
+
+@media screen and (max-width: 600px) {
+    .parameter-container {
+        flex-direction: column;
+    }
+
+    .parameter {
+        width: 100%;
+    }
+
+    .forecast-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    div[forecast-card] {
+        width: 90%;
+    }
+
+    .form-container {
+        margin-left: 2rem;
+    }
+}
+
+/*************** for screens thinner than 350px ***************/
+
+@media screen and (max-width: 350px) {
+    .user-info-container div[min-and-max] {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .form-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    button[clear-btn] {
+        display: none;
+    }
+
+    .form-container .btn:first-of-type {
+        display: none;
+    }
+
+    button[submit-btn-2] {
+        display: inline-block;
+    }
+
+    .form-container {
+        margin-inline: auto;
+    }
+}
