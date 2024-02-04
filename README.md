@@ -23,6 +23,23 @@ To use the project, follow these steps:
 5. You can also search the weather of any specific city/state/country in the search weather tab.
 6. Make sure you have a stable internet connection for smooth experience.
 
+Features
+--------
+
+*   Single page web application with two tabs: User Tab and Search Tab.
+*   User Tab displays weather information based on user's location.
+    *  Grant location access screen prompts user for location permission.
+    *  Displays weather details including place name, country flag, weather icon and description, current temperature, min and max temperature, humidity, wind speed, and cloud cover.
+    *  Forecast section shows average temperature, weather icon, and description for the next 5 days.
+    *  Temperature unit toggle button allows switching between Celsius and Fahrenheit.
+*  Search Tab enables users to search for weather information by place name.
+    *  Search form appears upon clicking the Search Tab button.
+    *  Entering a place name and clicking Search displays weather information for that place.
+    *  Displays weather details similar to user location including all parameters listed above.
+    *  Error screen appears if the searched place is invalid or data is unavailable.
+*  Error handling for unsupported geolocation feature.
+    *  Displays error message if geolocation feature is not supported by the user's system.
+
 Credits
 -------
 
