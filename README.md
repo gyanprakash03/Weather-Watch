@@ -3,8 +3,6 @@ Weather Watch
 
 "Weather Watch" is a comprehensive weather application designed to keep you informed about current and forecasted weather conditions with ease and accuracy.
 With Weather Watch, users can effortlessly track local and global weather patterns and access real-time updates.From temperature trends for next 5 days to humidity and cloud pattern, 
-Weather Watch empowers users to make informed decisions and plan their day effectively, ensuring they are always prepared for whatever Mother Nature has in store. 
-Experience the power of weather forecasting with Weather Watch – your ultimate weather companion.
 
 Installation
 ------------
