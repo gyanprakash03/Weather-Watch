@@ -9,6 +9,10 @@
     scroll-behavior: smooth;
 }
 
+body {
+    background-color: #000000;
+}
+
 /* main parent element */
 .wrapper{
     width:100vw;
