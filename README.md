@@ -48,3 +48,12 @@ Contact
 -------
 
 For inquiries, please contact: gyan091203@gmail.com
+
+Screenshots
+-----------
+![Screenshot 2024-02-04 195121](https://github.com/gyanprakash03/Weather-Watch/assets/127295111/a99948e3-50b2-4a04-902b-5c3d0f6ed4fc)
+![Screenshot 2024-02-04 195220](https://github.com/gyanprakash03/Weather-Watch/assets/127295111/4e4e8e41-fbd2-4f65-a096-f6f1a0f1c8a8)
+![Screenshot 2024-02-04 195253](https://github.com/gyanprakash03/Weather-Watch/assets/127295111/01aa4533-3852-469a-8566-525597d914b3)
+
+
+
